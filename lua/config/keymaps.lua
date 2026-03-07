@@ -35,6 +35,12 @@ map("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", { desc = "LSP code 
 
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
 
+-------------------------------------- Formatting ------------------------------------------
+
+map({ "n", "x" }, "<leader>fm", function()
+  require("conform").format { lsp_fallback = true }
+end, { desc = "general format file" })
+
 -------------------------------------- Terminal ------------------------------------------
 
 -- map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
