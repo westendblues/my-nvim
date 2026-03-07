@@ -1,0 +1,28 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      "asm",
+      "bash",
+      "c",
+      "cmake",
+      "cpp",
+      "csv",
+      "dockerfile",
+      "objdump",
+      "perl",
+      "python",
+      "regex",
+      "make",
+      "markdown",
+      "vim",
+      "lua",
+      "vimdoc",
+      "xml",
+      "json",
+      "yaml",
+      "html",
+      "css",
+    },
+  },
+}
