@@ -4,4 +4,4 @@ require "config.lazy"
 require "config.lspconfig"
 require "config.autocmds"
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("catppuccin-macchiato")
