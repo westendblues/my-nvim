@@ -6,6 +6,25 @@ caps.offsetEncoding = nil
 caps.general = caps.general or {}
 caps.general.positionEncodings = { "utf-16" } -- LSP 3.17 default
 
+-- ---- Enhanced completion capabilities ----
+caps.textDocument.completion.completionItem = {
+	documentationFormat = { "markdown", "plaintext" },
+	snippetSupport = true,
+	preselectSupport = true,
+	insertReplaceSupport = true,
+	labelDetailsSupport = true,
+	deprecatedSupport = true,
+	commitCharactersSupport = true,
+	tagSupport = { valueSet = { 1 } },
+	resolveSupport = {
+		properties = {
+			"documentation",
+			"detail",
+			"additionalTextEdits",
+		},
+	},
+}
+
 -- ---- Diagnostics look/feel (inline errors etc.) ----
 -- LSP keymaps are handled by Snacks pickers instead
 vim.diagnostic.config {
@@ -16,9 +35,39 @@ vim.diagnostic.config {
 	severity_sort = true,
 }
 
+-- ---- on_init handler to disable semantic tokens (reduces CPU usage) ----
+local function on_init(client, _)
+	if vim.fn.has("nvim-0.11") ~= 1 then
+		if client.supports_method("textDocument/semanticTokens") then
+			client.server_capabilities.semanticTokensProvider = nil
+		end
+	else
+		if client:supports_method("textDocument/semanticTokens") then
+			client.server_capabilities.semanticTokensProvider = nil
+		end
+	end
+end
+
+-- ---- Workspace folder keymaps ----
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp_workspace_keymaps", { clear = true }),
+	callback = function(args)
+		local bufnr = args.buf
+		local map = function(mode, lhs, rhs, desc)
+			vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
+		end
+		map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, "LSP: Add workspace folder")
+		map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, "LSP: Remove workspace folder")
+		map("n", "<leader>wl", function()
+			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+		end, "LSP: List workspace folders")
+	end,
+})
+
 -- ---- Apply globals to all servers ----
 vim.lsp.config("*", {
 	capabilities = caps,
+	on_init = on_init,
 })
 
 -- ---- Server-specific bits ----
