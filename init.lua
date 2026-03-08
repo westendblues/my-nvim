@@ -1,5 +1,6 @@
 require "config.options"
 require "config.keymaps"
 require "config.lazy"
+require "config.lspconfig"
 
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("rose-pine-dawn")
