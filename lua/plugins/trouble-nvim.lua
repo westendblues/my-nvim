@@ -1,6 +1,7 @@
 return {
   "folke/trouble.nvim",
-  branch = "main", -- IMPORTANT!
+  branch = "main",
+  lazy = true,
   keys = {
     {
       "<leader>xx",
@@ -37,28 +38,28 @@ return {
     modes = {
       lsp_references = {
         win = {
-          type = "split", -- split window
-          relative = "win", -- relative to current window
-          position = "right", -- right side
-          size = 0.3, -- 30% of the window
+          type = "split",
+          relative = "win",
+          position = "right",
+          size = 0.3,
         },
       },
       lsp_base = {
         win = {
-          type = "split", -- split window
-          relative = "win", -- relative to current window
-          position = "right", -- right side
-          size = 0.3, -- 30% of the window
+          type = "split",
+          relative = "win",
+          position = "right",
+          size = 0.3,
         },
       },
-      symbols = { -- Configure symbols mode
+      symbols = {
         win = {
-          type = "split", -- split window
-          relative = "win", -- relative to current window
-          position = "right", -- right side
-          size = 0.3, -- 30% of the window
+          type = "split",
+          relative = "win",
+          position = "right",
+          size = 0.3,
         },
       },
     },
-  }, -- for default options, refer to the configuration section for custom setup.
+  },
 }

@@ -28,9 +28,6 @@ map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
--------------------------------------- LSP code actions ------------------------------------------
-map("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", { desc = "LSP code actions" })
-
 -------------------------------------- LSP Diagnostics ------------------------------------------
 
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
