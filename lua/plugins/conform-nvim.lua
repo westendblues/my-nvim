@@ -11,7 +11,7 @@ return {
 			cpp = { "clang-format" },
 			asm = { "asmfmt" },
 			json = { "jq" },
-		},
+    },
 		formatters = {
 			clang_format = {
 				prepend_args = { "--style=file", "--fallback-style=LLVM" },
