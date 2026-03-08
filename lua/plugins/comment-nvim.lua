@@ -3,7 +3,7 @@ return {
 	lazy = true,
 	event = "BufReadPost",
 	config = function()
-		require("comment").setup({
+		require("Comment").setup({
 			ignore = "^$",
 		})
 	end,
