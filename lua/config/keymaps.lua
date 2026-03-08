@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("n", "<C-s>", "<cmd>w<CR>", {desc = "save file"})
+map("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 
 -- Custom Keybindings (based on NvChad + custom preferences)
 
@@ -36,7 +36,7 @@ map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic locli
 -------------------------------------- Formatting ------------------------------------------
 
 map({ "n", "x" }, "<leader>fm", function()
-  require("conform").format { lsp_fallback = true }
+	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
 -------------------------------------- Comment Toggle ------------------------------------------
