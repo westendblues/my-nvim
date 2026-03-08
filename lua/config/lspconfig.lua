@@ -27,7 +27,7 @@ caps.textDocument.completion.completionItem = {
 
 -- ---- Diagnostics look/feel (inline errors etc.) ----
 -- LSP keymaps are handled by Snacks pickers instead
-vim.diagnostic.config {
+ vim.diagnostic.config {
 	virtual_text = { spacing = 2, prefix = "●" },
 	signs = true,
 	underline = true,
