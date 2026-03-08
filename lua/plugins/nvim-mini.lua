@@ -2,7 +2,7 @@ return {
 	"nvim-mini/mini.pairs",
 	lazy = false,
 	version = "*",
-	config = {
+	opt = {
 		modes = { insert = true, command = false, terminal = false },
 
 		-- Global mappings. Each right hand side should be a pair information, a

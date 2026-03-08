@@ -26,14 +26,4 @@ return {
 		--   lsp_fallback = true,
 		-- },
 	},
-	keys = {
-		{
-			"<leader>fm",
-			function()
-				require("conform").format({ async = true, lsp_fallback = true })
-			end,
-			desc = "Format selected text",
-			mode = "v",
-		},
-	},
 }

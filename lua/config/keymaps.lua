@@ -35,9 +35,9 @@ map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic locli
 
 -------------------------------------- Formatting ------------------------------------------
 
-map({ "n", "x" }, "<leader>fm", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "general format file" })
+map("", "<leader>fm", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "format file" })
 
 -------------------------------------- Comment Toggle ------------------------------------------
 
