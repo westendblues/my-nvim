@@ -30,6 +30,7 @@ map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 -------------------------------------- LSP Diagnostics ------------------------------------------
 
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code action" })
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
 
 -------------------------------------- Formatting ------------------------------------------
