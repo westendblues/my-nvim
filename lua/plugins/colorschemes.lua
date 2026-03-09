@@ -6,10 +6,24 @@ return {
 	{ "gbprod/nord.nvim", lazy = false, priority = 1000 },
 	{ "maxmx03/solarized.nvim", lazy = false, priority = 1000 },
 	{ "kepano/flexoki", lazy = false, priority = 1000 },
-	{ "ellisonleao/gruvbox.nvim", lazy = false, priority = 1000 },
+	{
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.gruvbox_material_enable_italic = true
+			vim.g.gruvbox_material_better_performance = 1
+		end,
+	},
 	{ "savq/melange-nvim", lazy = false, priority = 1000 },
-	{ "luisiacc/gruvbox-baby", lazy = false, priority = 1000 },
-	{ "neanias/everforest-nvim", lazy = false, priority = 1000 },
+	{
+		"sainnhe/everforest",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.everforest_enable_italic = true
+		end,
+	},
 	{ "EdenEast/nightfox.nvim", lazy = false, priority = 1000 },
 	{ "rose-pine/neovim", lazy = false, name = "rose-pine", priority = 1000 },
 	-- { "", lazy = false, priority = 1000 },
