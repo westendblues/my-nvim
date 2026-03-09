@@ -17,5 +17,5 @@ return {
   keys = {
     { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit", mode = "n" },
   },
-    enabled = false, -- trying out snacks.nvim version
+    enabled = true,
 }
