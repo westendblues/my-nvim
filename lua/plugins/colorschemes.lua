@@ -5,7 +5,6 @@ return {
 	{ "oxfist/night-owl.nvim", lazy = false, priority = 1000 },
 	{ "gbprod/nord.nvim", lazy = false, priority = 1000 },
 	{ "maxmx03/solarized.nvim", lazy = false, priority = 1000 },
-	{ "kepano/flexoki", lazy = false, priority = 1000 },
 	{
 		"sainnhe/gruvbox-material",
 		lazy = false,
@@ -15,7 +14,6 @@ return {
 			vim.g.gruvbox_material_better_performance = 1
 		end,
 	},
-	{ "savq/melange-nvim", lazy = false, priority = 1000 },
 	{
 		"sainnhe/everforest",
 		lazy = false,
@@ -25,6 +23,12 @@ return {
 		end,
 	},
 	{ "EdenEast/nightfox.nvim", lazy = false, priority = 1000 },
+	{
+		"binhtran432k/dracula.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 	{ "rose-pine/neovim", lazy = false, name = "rose-pine", priority = 1000 },
 	-- { "", lazy = false, priority = 1000 },
 }
