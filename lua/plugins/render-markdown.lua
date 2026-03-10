@@ -8,10 +8,10 @@ return {
 	opts = {
 		-- latex = { enabled = false },
 		checkbox = {
-			-- unchecked = { icon = "🟥" },
-			-- checked = { icon = "🟩" },
+			-- unchecked = { icon = "⬜" },
+			-- checked = { icon = "✅" },
 		},
-		anti_conceal = { enabled = false },
+		-- anti_conceal = { enabled = false },
 	},
 	lazy = false,
 }
