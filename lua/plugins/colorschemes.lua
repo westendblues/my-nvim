@@ -2,8 +2,6 @@ return {
 	{ "folke/tokyonight.nvim", lazy = false, priority = 1000 },
 	{ "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000 },
 	{ "rebelot/kanagawa.nvim", lazy = false, priority = 1000 },
-	{ "oxfist/night-owl.nvim", lazy = false, priority = 1000 },
-	{ "gbprod/nord.nvim", lazy = false, priority = 1000 },
 	{ "maxmx03/solarized.nvim", lazy = false, priority = 1000 },
 	{
 		"sainnhe/gruvbox-material",

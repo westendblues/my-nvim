@@ -28,12 +28,8 @@ return {
 			"javascript",
 			"rust",
 		},
-
-		highlight = {
-			enable = true,
-		},
-		indent = {
-			enable = true,
-		},
+		latex = { enable = false },
+		highlight = { enable = true },
+		indent = { enable = true },
 	},
 }

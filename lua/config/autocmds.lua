@@ -22,3 +22,11 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function(args)
+    vim.treesitter.start(args.buf, "markdown")
+    pcall(vim.treesitter.start, args.buf, "markdown_inline")
+  end,
+})

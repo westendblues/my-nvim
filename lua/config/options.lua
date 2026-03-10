@@ -56,6 +56,10 @@ opt.whichwrap:append "<>[]hl" -- Wrap h/l at line ends
 opt.shortmess:append "sI"     -- Hide intro message and search count
 o.swapfile = false            -- Disable swap files
 
+-------------------------------------- Sessions ------------------------------------------
+
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -------------------------------------- Performance ------------------------------------------
 
 -- Disable unused providers
