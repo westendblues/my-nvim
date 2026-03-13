@@ -90,9 +90,9 @@ return {
 		{
 			"<leader>ff",
 			function()
-				Snacks.picker.files()
+				Snacks.picker.files({ hidden = true, ignored = true })
 			end,
-			desc = "Snacks Find Files",
+			desc = "Snacks Find Files (All)",
 		},
 		{
 			"<leader>fg",
@@ -183,9 +183,9 @@ return {
 		{
 			"<leader>sg",
 			function()
-				Snacks.picker.grep()
+				Snacks.picker.grep({ follow = true, hidden = true, ignored = true })
 			end,
-			desc = "Snacks Grep",
+			desc = "Snacks Grep (All Files)",
 		},
 		{
 			"<leader>sw",

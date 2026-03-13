@@ -24,7 +24,24 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf)
-  end,
+	callback = function(args)
+		pcall(vim.treesitter.start, args.buf)
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.bb", "*.bbappend", "*.bbclass", "*.inc", "local.conf", "poky/*/*.conf", "*.conf" },
+	callback = function()
+		vim.bo.filetype = "bitbake"
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "*.bb", "*.bbappend", "*.bbclass", "*.inc", "local.conf", "poky/*/*.conf" },
+	callback = function()
+		vim.lsp.start({
+			name = "bitbake",
+			cmd = { "language-server-bitbake", "--stdio" },
+		})
+	end,
 })

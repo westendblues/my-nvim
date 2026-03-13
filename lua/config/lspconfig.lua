@@ -157,8 +157,22 @@ vim.lsp.config("rust_analyzer", {
 	single_file_support = true,
 })
 
+vim.lsp.config("bitbake", {
+	cmd = { "language-server-bitbake", "--stdio" },
+	filetypes = { "bitbake" },
+	root_dir = function(fname)
+		if type(fname) ~= "string" then
+			return vim.fn.getcwd()
+		end
+		local found = vim.fs.find({ "conf", ".git" }, { path = fname, upward = true })[1]
+		return found and vim.fs.dirname(found) or vim.fn.getcwd()
+	end,
+	single_file_support = true,
+})
+
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
+	"bitbake",
 	"html",
 	"cssls",
 	"clangd",
