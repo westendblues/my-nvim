@@ -1,15 +1,18 @@
 return {
 	"hrsh7th/nvim-cmp",
-    lazy = false,
+	lazy = false,
+	dependencies = {
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-nvim-lua",
+		"hrsh7th/cmp-path",
+	},
 	config = function()
 		local cmp = require("cmp")
-		cmp.setup({
-			completion = { completeopt = "menu,menuone" },
 
-			snippet = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
-				end,
+		cmp.setup({
+			completion = {
+				completeopt = "menu,menuone,noinsert",
 			},
 
 			mapping = {
@@ -18,18 +21,16 @@ return {
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
-				["<C-e>"] = cmp.mapping.close(),
+				["<C-e>"] = cmp.mapping.abort(),
 
 				["<CR>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = false,
 				}),
 
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
-					elseif require("luasnip").expand_or_jumpable() then
-						require("luasnip").expand_or_jump()
 					else
 						fallback()
 					end
@@ -38,21 +39,19 @@ return {
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
-					elseif require("luasnip").jumpable(-1) then
-						require("luasnip").jump(-1)
 					else
 						fallback()
 					end
 				end, { "i", "s" }),
 			},
 
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
+				{ name = "path" },
+			}, {
 				{ name = "buffer" },
 				{ name = "nvim_lua" },
-				{ name = "async_path" },
-			},
+			}),
 		})
 	end,
 }

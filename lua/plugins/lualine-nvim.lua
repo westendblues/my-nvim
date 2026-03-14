@@ -1,9 +1,11 @@
 return {
 	"nvim-lualine/lualine.nvim",
+    -- enabled = false,
 	lazy = false,
-	dependencies = { "nvim-tree/nvim-web-devicons", "SmiteshP/nvim-navic" },
+	-- dependencies = { "nvim-tree/nvim-web-devicons", "SmiteshP/nvim-navic" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local navic = require("nvim-navic")
+		-- local navic = require("nvim-navic")
 
 		require("lualine").setup({
 			options = {
@@ -13,17 +15,17 @@ return {
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = { "dashboard", "alpha" },
-					winbar = {
-						"help",
-						"startify",
-						"aerial",
-						"alpha",
-						"dashboard",
-						"packer",
-						"neogitstatus",
-						"NvimTree",
-						"neo-tree",
-					},
+					-- winbar = {
+					-- 	"help",
+					-- 	"startify",
+					-- 	"aerial",
+					-- 	"alpha",
+					-- 	"dashboard",
+					-- 	"packer",
+					-- 	"neogitstatus",
+					-- 	"NvimTree",
+					-- 	"neo-tree",
+					-- },
 				},
 				ignore_focus = {},
 				always_divide_middle = true,
@@ -31,7 +33,7 @@ return {
 				refresh = {
 					statusline = 1000,
 					tabline = 1000,
-					winbar = 1000,
+					-- winbar = 1000,
 				},
 			},
 			sections = {
@@ -58,16 +60,16 @@ return {
 			},
 			tabline = {},
 			winbar = {
-				lualine_c = {
-					{
-						function()
-							return navic.get_location()
-						end,
-						cond = function()
-							return navic.is_available()
-						end,
-					},
-				},
+				-- lualine_c = {
+				-- 	{
+				-- 		function()
+				-- 			return navic.get_location()
+				-- 		end,
+				-- 		cond = function()
+				-- 			return navic.is_available()
+				-- 		end,
+				-- 	},
+				-- },
 			},
 			inactive_winbar = {},
 			extensions = {},
