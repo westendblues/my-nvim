@@ -27,7 +27,7 @@ return {
 				views = {
 					cmdline_popup = {
 						position = {
-							row = "50%",
+							row = "40%",
 							col = "50%",
 						},
 						size = {
@@ -38,8 +38,13 @@ return {
 					},
 					cmdline_popupmenu = {
 						position = {
-							row = "65%",
+							row = "60%",
 							col = "50%",
+						},
+						size = {
+							min_width = 60,
+							width = "auto",
+							height = "auto",
 						},
 					},
 				},
