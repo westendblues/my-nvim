@@ -177,6 +177,12 @@ vim.lsp.config("cmake", {
 	single_file_support = true,
 })
 
+vim.lsp.config("yamlls", {
+	cmd = { "yaml-language-server", "--stdio" },
+	filetypes = { "yaml", "yml" },
+	single_file_support = true,
+})
+
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
     "cmake",
@@ -190,6 +196,7 @@ vim.lsp.enable({
 	"perlnavigator",
 	"dockerls",
 	"jsonls",
+	"yamlls",
 	"asm_lsp",
 	"rust_analyzer",
 })
