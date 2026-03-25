@@ -27,13 +27,13 @@ caps.textDocument.completion.completionItem = {
 
 -- ---- Diagnostics look/feel (inline errors etc.) ----
 -- LSP keymaps are handled by Snacks pickers instead
- vim.diagnostic.config {
+vim.diagnostic.config({
 	virtual_text = { spacing = 2, prefix = "●" },
 	signs = true,
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
-}
+})
 
 -- ---- on_init handler to disable semantic tokens (reduces CPU usage) ----
 local function on_init(client, _)
@@ -185,7 +185,7 @@ vim.lsp.config("yamlls", {
 
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
-    "cmake",
+	"cmake",
 	"bitbake",
 	"html",
 	"cssls",
