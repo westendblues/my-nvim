@@ -183,6 +183,12 @@ vim.lsp.config("yamlls", {
 	single_file_support = true,
 })
 
+vim.lsp.config("groovy", {
+	cmd = { "groovy-language-server", "--stdio" },
+	filetypes = { "groovy" },
+	single_file_support = true,
+})
+
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
 	"cmake",
@@ -197,6 +203,7 @@ vim.lsp.enable({
 	"dockerls",
 	"jsonls",
 	"yamlls",
+	"groovy",
 	"asm_lsp",
 	"rust_analyzer",
 })
