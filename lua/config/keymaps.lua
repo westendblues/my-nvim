@@ -2,6 +2,10 @@ local map = vim.keymap.set
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 
+-- Tab navigation
+map("n", "<leader>tn", "<cmd>tabnext<CR>", { desc = "go to next tab" })
+map("n", "<leader>tp", "<cmd>tabprevious<CR>", { desc = "go to previous tab" })
+
 -- Custom Keybindings (based on NvChad + custom preferences)
 
 -------------------------------------- Insert Mode Navigation ------------------------------------------

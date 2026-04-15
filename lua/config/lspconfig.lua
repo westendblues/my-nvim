@@ -189,8 +189,16 @@ vim.lsp.config("groovy", {
 	single_file_support = true,
 })
 
+vim.lsp.config("asm_lsp", {
+	cmd = { "asm-lsp" },
+	filetypes = { "asm", "s", "S" },
+	single_file_support = true,
+	-- root_markers = { ".git" },
+})
+
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
+	"asm_lsp",
 	"cmake",
 	"bitbake",
 	"html",
