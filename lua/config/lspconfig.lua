@@ -170,7 +170,7 @@ vim.lsp.config("bitbake", {
 	single_file_support = true,
 })
 
-vim.lsp.config("cmake", {
+vim.lsp.config("neocmake", {
 	-- cmd = { "cmake-language-server", "--stdio" },
 	cmd = { "neocmakelsp", "stdio" },
 	filetypes = { "cmake" },
@@ -200,7 +200,7 @@ vim.lsp.config("sql_lsp", {
 
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
-	"cmake",
+	"neocmake",
 	"bitbake",
 	"html",
 	"cssls",

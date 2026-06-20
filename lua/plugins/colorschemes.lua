@@ -30,5 +30,6 @@ return {
 	{ "rose-pine/neovim", lazy = false, name = "rose-pine", priority = 1000 },
 	{ "luisiacc/the-matrix.nvim", lazy = false, priority = 1000 },
 	{ "iruzo/matrix-nvim", lazy = false, priority = 1000 },
+	{ "shaunsingh/moonlight.nvim", lazy = false, priority = 1000 },
 	-- { "", lazy = false, priority = 1000 },
 }

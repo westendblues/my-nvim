@@ -11,6 +11,7 @@ return {
 			cpp = { "clang-format" },
 			asm = { "asmfmt" },
 			json = { "jq" },
+			cmake = { "cmake-format" },
 		},
 		formatters = {
 			clang_format = {
