@@ -31,5 +31,13 @@ return {
 	{ "luisiacc/the-matrix.nvim", lazy = false, priority = 1000 },
 	{ "iruzo/matrix-nvim", lazy = false, priority = 1000 },
 	{ "shaunsingh/moonlight.nvim", lazy = false, priority = 1000 },
+	{
+		"dgrco/deepwater.nvim",
+		lazy = false,
+		priority = 1000,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("deepwater")
+		-- end,
+	},
 	-- { "", lazy = false, priority = 1000 },
 }
