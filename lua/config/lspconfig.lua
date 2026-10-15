@@ -198,12 +198,31 @@ vim.lsp.config("sql_lsp", {
 	-- root_markers = { ".git" },
 })
 
+vim.lsp.config("html", {
+	cmd = { "vscode-html-language-server ", "--stdio" },
+	filetypes = { "html" },
+	single_file_support = true,
+})
+
+vim.lsp.config("cssls", {
+	cmd = { "vscode-css-language-server", "--stdio" },
+	filetypes = { "css" },
+	single_file_support = true,
+})
+
+vim.lsp.config("js", {
+	cmd = { "vtsls", "--stdio" },
+	filetypes = { "javascript" },
+	single_file_support = true,
+})
+
 -- ---- Enable the servers you want running ----
 vim.lsp.enable({
 	"neocmake",
 	"bitbake",
 	"html",
 	"cssls",
+	"js",
 	"clangd",
 	"bashls",
 	"lua_ls",

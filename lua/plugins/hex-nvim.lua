@@ -5,4 +5,5 @@ return {
 	config = function()
 		require("hex").setup()
 	end,
+    enabled = false
 }

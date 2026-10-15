@@ -5,4 +5,4 @@ require("config.lspconfig")
 require("config.autocmds")
 require("config.projectcmds").setup()
 
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("kanagawa")

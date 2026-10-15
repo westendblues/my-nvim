@@ -5,7 +5,7 @@ return {
 	event = "VeryLazy",
 	---@type snacks.Config
 	opts = {
-		bigfile = { enabled = true },
+		bigfile = { enabled = false },
 		dashboard = { enabled = true },
 		explorer = { enabled = true },
 		indent = { enabled = true },
